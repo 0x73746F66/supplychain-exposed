@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="contents-page">
+  <header class="chapter__head">
+    <p class="chapter__kicker">The Vulnerability Manifesto</p>
+    <h1 class="chapter__title">{{ if .IsHome }}Contents{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  </header>
+  {{ partial "toc.html" . }}
+</section>
+{{ end }}

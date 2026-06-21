@@ -1,0 +1,15 @@
+{{ $chapters := (site.GetPage "/chapters").RegularPages.ByWeight }}
+<nav class="toc" aria-label="Table of contents">
+  <h2 class="toc__heading">Contents</h2>
+  <ol class="toc__list">
+    {{ range $chapters }}
+    <li class="toc__item">
+      <a class="toc__link" href="{{ .RelPermalink }}">
+        {{ with .Params.kicker }}<span class="toc__kicker">{{ . }}</span>{{ end }}
+        <span class="toc__title">{{ .Title }}</span>
+        {{ with .Params.subtitle }}<span class="toc__sub">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+    {{ end }}
+  </ol>
+</nav>

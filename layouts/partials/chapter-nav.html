@@ -1,0 +1,32 @@
+{{ $pages := (site.GetPage "/chapters").RegularPages.ByWeight }}
+{{ $here := .RelPermalink }}
+{{ $prev := false }}
+{{ $next := false }}
+{{ $last := sub (len $pages) 1 }}
+{{ range $i, $p := $pages }}
+  {{ if eq $p.RelPermalink $here }}
+    {{ if gt $i 0 }}{{ $prev = index $pages (sub $i 1) }}{{ end }}
+    {{ if lt $i $last }}{{ $next = index $pages (add $i 1) }}{{ end }}
+  {{ end }}
+{{ end }}
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <div class="chapter-nav__side chapter-nav__side--prev">
+    {{ with $prev }}
+    <a class="chapter-nav__link" href="{{ .RelPermalink }}">
+      <span class="chapter-nav__dir">&larr; Previous</span>
+      <span class="chapter-nav__name">{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </div>
+  <div class="chapter-nav__side chapter-nav__side--contents">
+    <a class="chapter-nav__contents" href="{{ "/" | relURL }}">Contents</a>
+  </div>
+  <div class="chapter-nav__side chapter-nav__side--next">
+    {{ with $next }}
+    <a class="chapter-nav__link" href="{{ .RelPermalink }}">
+      <span class="chapter-nav__dir">Next &rarr;</span>
+      <span class="chapter-nav__name">{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </div>
+</nav>

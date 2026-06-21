@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+
+{{ $desc := cond (ne .Description "") .Description .Site.Params.description }}
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="theme-color" content="#15130f">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Site.Params.ogImage }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ $desc }}">
+{{ with .Site.Params.ogImage }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
+
+<!-- Set the theme before first paint to avoid a flash -->
+<script>
+(function(){try{var t=localStorage.getItem('vm-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+
+<!-- Self-hosted fonts: preload the two most-used faces -->
+<link rel="preload" href="{{ "fonts/eb-garamond-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/playfair-900.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+
+{{ $css := resources.Get "css/book.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">

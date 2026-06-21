@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ or .Site.Language.Lang "en" }}" data-theme="light">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ if .IsHome }}is-cover{{ else }}is-chapter{{ end }}">
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+  {{ partial "header.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ partial "scripts.html" . }}
+</body>
+</html>

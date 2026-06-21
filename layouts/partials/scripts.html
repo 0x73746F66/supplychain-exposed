@@ -1,0 +1,25 @@
+<script>
+(function () {
+  // Reading-progress bar
+  var bar = document.getElementById('reading-progress');
+  function onScroll() {
+    if (!bar) return;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // Light / dark toggle (the no-flash default is set in <head>)
+  var btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('vm-theme', next); } catch (e) {}
+    });
+  }
+})();
+</script>

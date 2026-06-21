@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ $chapters := (site.GetPage "/chapters").RegularPages.ByWeight }}
+<section class="cover">
+  <p class="cover__kicker">A Manifesto</p>
+  <h1 class="cover__title">The&nbsp;Vulnerability<br>Manifesto</h1>
+  <p class="cover__subtitle">{{ .Site.Params.subtitle }}</p>
+  <p class="cover__byline">by {{ .Site.Params.author }}</p>
+  {{ with .Content }}<div class="cover__lede">{{ . }}</div>{{ end }}
+  {{ with index $chapters 0 }}
+  <p class="cover__begin"><a class="cover__begin-link" href="{{ .RelPermalink }}">Begin reading &rarr;</a></p>
+  {{ end }}
+</section>
+{{ partial "toc.html" . }}
+{{ end }}

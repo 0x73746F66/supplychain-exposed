@@ -1,0 +1,40 @@
+baseURL = "https://0x73746f66.github.io/vulnerability-manifesto/"
+title = "The Vulnerability Manifesto"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+enableGitInfo = false
+
+[languages]
+  [languages.en]
+    locale = "en-US"
+    weight = 1
+
+# This is a single long-form book: no tags, categories, or RSS-per-term noise.
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  author = "Christopher Langton"
+  subtitle = "Detection was the control all along. Put it back at the source."
+  description = "A manifesto for stopping malware at the door: registries must scan before they publish, package managers are the source of truth, and vulnerability data must be free, enriched, and good. Detection was the control all along."
+  # Used for Open Graph / Twitter card images and the colophon link.
+  ogImage = "img/og-cover.png"
+  repo = "https://github.com/0x73746F66/vulnerability-manifesto"
+  vulnetix = "https://vulnetix.com"
+
+[markup]
+  [markup.goldmark.renderer]
+    # Needed for the ornamental dividers, pull-quotes and small-caps spans
+    # used to give chapters a printed-book feel.
+    unsafe = true
+  [markup.goldmark.extensions.typographer]
+    # Real curly quotes, em-dashes and ellipses — this is a book.
+    disable = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[minify]
+  disableSVG = false
+  [minify.tdewolff.html]
+    keepWhitespace = false

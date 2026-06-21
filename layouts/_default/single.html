@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="chapter">
+  <header class="chapter__head">
+    {{ with .Params.kicker }}<p class="chapter__kicker">{{ . }}</p>{{ end }}
+    <h1 class="chapter__title">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="chapter__subtitle">{{ . }}</p>{{ end }}
+    {{ with .Params.epigraph }}
+    <blockquote class="epigraph">
+      {{ . | markdownify }}
+      {{ with $.Params.epigraphby }}<cite>{{ . }}</cite>{{ end }}
+    </blockquote>
+    {{ end }}
+  </header>
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  {{ partial "chapter-nav.html" . }}
+</article>
+{{ end }}
