@@ -6,8 +6,8 @@
   </p>
   <p class="colophon__line colophon__meta">
     The prose is released under
-    <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> —
-    quote it, translate it, send it to a registry.
+    <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a>.
+    Quote it, translate it, send it to a registry.
   </p>
   <p class="colophon__line colophon__links">
     <a href="{{ .Site.Params.repo }}">Source on GitHub</a>
@@ -16,5 +16,5 @@
     <span aria-hidden="true">·</span>
     <a href="{{ "/" | relURL }}">Back to the cover</a>
   </p>
-  <p class="colophon__line colophon__detection">Detection was the control all along.</p>
+  {{ if not .IsHome }}<p class="colophon__line colophon__detection">Detection was the control all along.</p>{{ end }}
 </footer>

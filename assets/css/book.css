@@ -150,7 +150,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   font-family: var(--font-sans);
   font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
 }
-.site-header__mark { color: var(--accent); font-family: var(--font-display); font-size: 1rem; }
 .site-header__home:hover .site-header__title { color: var(--accent); }
 .is-cover .site-header { border-bottom-color: transparent; background: transparent; backdrop-filter: none; }
 

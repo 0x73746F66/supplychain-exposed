@@ -2,4 +2,4 @@
 title: "Contents"
 ---
 
-Nine short chapters, one argument. Detection was the control all along.
+A preface, seven chapters, and a coda. One argument: detection was the control all along.

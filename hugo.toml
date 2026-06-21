@@ -14,7 +14,7 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   author = "Christopher Langton"
-  subtitle = "Detection was the control all along. Put it back at the source."
+  subtitle = "We defend software in the wrong place, too late, with data we can't trust. The fix is at the source."
   description = "A manifesto for stopping malware at the door: registries must scan before they publish, package managers are the source of truth, and vulnerability data must be free, enriched, and good. Detection was the control all along."
   # Used for Open Graph / Twitter card images and the colophon link.
   ogImage = "img/og-cover.png"
@@ -27,7 +27,7 @@ disableKinds = ["taxonomy", "term"]
     # used to give chapters a printed-book feel.
     unsafe = true
   [markup.goldmark.extensions.typographer]
-    # Real curly quotes, em-dashes and ellipses — this is a book.
+    # Real curly quotes and ellipses for a typeset feel.
     disable = false
   [markup.tableOfContents]
     startLevel = 2
