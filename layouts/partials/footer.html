@@ -14,7 +14,7 @@
     <span aria-hidden="true">·</span>
     <a href="{{ .Site.Params.vulnetix }}">Vulnetix</a>
     <span aria-hidden="true">·</span>
-    <a href="{{ "/" | relURL }}">Back to the cover</a>
+    <a href="{{ site.Home.RelPermalink }}">Back to the cover</a>
   </p>
   {{ if not .IsHome }}<p class="colophon__line colophon__detection">Detection was the control all along.</p>{{ end }}
 </footer>
