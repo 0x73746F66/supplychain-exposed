@@ -24,7 +24,7 @@ From that single idea it presses three demands:
 
 ## Read it
 
-Published via GitHub Pages: <https://0x73746f66.github.io/vulnerability-manifesto/>
+Published via GitHub Pages at a custom domain: <https://supplychain.exposed/>
 
 ## Build it locally
 

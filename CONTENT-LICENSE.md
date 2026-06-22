@@ -1,6 +1,6 @@
 # Content License
 
-The prose of *The Vulnerability Manifesto*, everything under `content/`, is
+The prose of *Supply Chain Exposed*, everything under `content/`, is
 licensed under the **Creative Commons Attribution 4.0 International License
 (CC BY 4.0)**.
 

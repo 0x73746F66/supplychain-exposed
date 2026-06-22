@@ -44,12 +44,10 @@ jobs:
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-        # base_url from configure-pages carries the /vulnerability-manifesto/ subpath,
-        # so every asset URL resolves correctly under the project Pages site.
+        # The site lives at the apex custom domain (supplychain.exposed) — no project
+        # subpath to splice in — so the canonical baseURL in hugo.toml is authoritative.
         run: |
-          hugo \
-            --gc --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --gc --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

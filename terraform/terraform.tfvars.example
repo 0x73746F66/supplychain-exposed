@@ -1,0 +1,10 @@
+# Copy to terraform.tfvars and fill in. terraform.tfvars is gitignored.
+
+# Zone ID from the Cloudflare dashboard: supplychain.exposed > Overview > API panel.
+zone_id = "REPLACE_WITH_ZONE_ID"
+
+# Defaults below are already correct for this project; override only if needed.
+# domain              = "supplychain.exposed"
+# github_pages_target = "0x73746f66.github.io"
+# proxied             = false
+# manage_www          = true

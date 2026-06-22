@@ -1,5 +1,5 @@
-baseURL = "https://0x73746f66.github.io/vulnerability-manifesto/"
-title = "The Vulnerability Manifesto"
+baseURL = "https://supplychain.exposed/"
+title = "Supply Chain Exposed"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 enableGitInfo = false
@@ -18,7 +18,7 @@ disableKinds = ["taxonomy", "term"]
   description = "A manifesto for stopping malware at the door: registries must scan before they publish, package managers are the source of truth, and vulnerability data must be free, enriched, and good. Detection was the control all along."
   # Used for Open Graph / Twitter card images and the colophon link.
   ogImage = "img/og-cover.png"
-  repo = "https://github.com/0x73746F66/vulnerability-manifesto"
+  repo = "https://github.com/0x73746F66/supplychain-exposed"
   vulnetix = "https://vulnetix.com"
 
 [markup]

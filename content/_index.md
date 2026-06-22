@@ -1,5 +1,5 @@
 ---
-title: "The Vulnerability Manifesto"
+title: "Supply Chain Exposed"
 ---
 
 Almost nothing you run is code you wrote. It arrives from registries you do not control, vouched for by catalogs and tools you are told to trust, and installed by machines while you sleep. That chain of trust is the softest target in computing, and it is hit every day. Malware is uploaded straight to the registries developers pull from. Vulnerabilities are weaponized before they are even disclosed.

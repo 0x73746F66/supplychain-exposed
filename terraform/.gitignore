@@ -1,0 +1,13 @@
+# Local state and overrides — never commit these.
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Real variable values (zone_id etc.); keep the .example committed.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Keep .terraform.lock.hcl committed for reproducible provider versions.
