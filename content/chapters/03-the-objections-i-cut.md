@@ -20,4 +20,10 @@ Turn it around. The delay belongs at publish, not at install. Hold the release u
 
 > That is not a defense. It is free-riding with a stopwatch.
 
+There is a deeper reason that bet looks like it pays. A cooldown appears to work today only because most installs do not wait. The impatient majority pulls each version at once, and when one is malicious, someone in that crowd trips it first, files the report, and gets it pulled before the cautious minority's timer has run out. The people who waited were saved by the people who did not. That is not protection the cooldown produced. It is protection on loan from everyone who skipped it, and the interest is paid by whoever got hit in your place.
+
+Now grant the proposal its wish and make it the default. The lenders vanish. Turn the waiting on for everyone and there is no impatient majority left to spring the trap first, because there is no impatient majority left at all. Every install holds the same version on the same timer, and every timer was started by the same publish, so they all expire together. The whole ecosystem reaches day seven on one day, reaches for the package on that day, and if detection missed it, is breached on that day. The risk was not removed. It was carried seven days forward and synchronized, so that the moment the cooldown lifts is just a new day one with everyone standing on it at once. The only winner is the attacker, whose package spent your week aging quietly past the very gate built to distrust new things, and is waved through on schedule as something old enough to trust.
+
+> Make every install wait and you do not spread the protection around. You delete it, and hand everyone the same day one to stand on.
+
 So keep the knob if you want it, and keep it honest. Minutes at publish, behind detection, never days at install. The long cooldown was never the control. It was the comfortable feeling of one.
