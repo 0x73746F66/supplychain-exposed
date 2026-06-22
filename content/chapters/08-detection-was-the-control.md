@@ -1,6 +1,6 @@
 ---
 title: "Detection Was the Control"
-weight: 9
+weight: 10
 slug: "detection-was-the-control"
 kicker: "Coda"
 subtitle: "Everything here was one instruction. The rest is will."

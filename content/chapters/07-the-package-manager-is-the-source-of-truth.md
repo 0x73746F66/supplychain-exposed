@@ -1,8 +1,8 @@
 ---
 title: "The Package Manager Is the Source of Truth"
-weight: 8
+weight: 9
 slug: "the-package-manager"
-kicker: "Chapter Seven"
+kicker: "Chapter Eight"
 subtitle: "SCA is a guess. The thing that did the install is not."
 ---
 
@@ -33,5 +33,15 @@ Meanwhile the actual work goes undone. When there is no patch, the answer is a c
 Worse, a large share of what is escalated was never a vulnerability in the first place. The tool matched an over-broad CPE string that flags every version, including the patched one, so you stay "vulnerable" forever no matter what you ship. Or it never found a vulnerability at all. It found that a package was present, declared a finding, and never checked reachability, never asked whether the affected function or module is even imported, linked, or called. Present is not affected. Installed is not exploitable.
 
 These tools are expensive, usually owned by a security team that is not effective at operating them, and usually tuned so loosely that they are noise machines. The toil they generate trains everyone around them to ignore the output, so on the rare occasion the tool is right, that finding is ignored too, buried in the same stream of false positives that taught the team to look away. A control that has trained its own audience not to read it is not a control. It is detection turned all the way up and then unplugged from anyone who could act on it.
+
+And loose tuning is only the symptom. The disease is that the analysis was never connected to how your code runs in the first place. To reason about a program, a SAST tool has to model it, and rather than use the language's own abstract syntax tree, the one the compiler itself builds and runs on, many vendors build their own. A proprietary tree, a private rendering of your code that resembles it about as well as a sketch resembles a face. So the tool walks a call graph it invented, finds a path through it, and reports a vulnerability on a route the running program never takes. The compiler and the scanner are looking at two different programs, and only one of them is the program you ship. A finding on a path that never executes is not a finding. It is ritual, performed against a model of your software that does not exist.
+
+The secret scanners commit the same sin with less machinery. A context-free pattern match sees a sixty-four-character hex string and declares a credential, so it flags the SHA-256 in your lockfile, the commit hash in your changelog, the image digest in your Dockerfile, and the deliberately fake key in your test fixtures, and the one real token buried in ten thousand lines rides out in the same undifferentiated flood as all the rest. To the developer holding the queue, everything that is not work to be done is noise. To the vendor, every one of those lines is a finding, and findings are what the dashboard counts. You do not even agree on what the product is. For you it is the signal. For them the noise is the product.
+
+> The loud tool justifies its renewal. The quiet one has to explain the empty dashboard.
+
+And that disagreement is not an accident. It is the business model, the same move the cooldown made and the catalog made, now printed on an invoice. The incentive never ran toward precision. A precise tool is a quiet tool, and a quiet tool is a hard thing to renew, so the product optimizes for volume instead. The true finding and the false one cost the vendor nothing to emit, and on the dashboard that justifies the contract, both count exactly the same.
+
+Watch what happens on the rare occasion one of these tools tries to get accurate. To know whether a vulnerable dependency is actually reachable, it has to do the thing described at the top of this chapter, become a static-analysis tool and walk the real call graph. And the instant the SCA vendor ships that, its headline feature is AST-based reachability, which is to say its headline feature is SAST. So it sells you the reachability engine as a second product, on a second licence, alongside the SCA you were already buying. If the most valuable thing the SCA does is the analysis that belongs to SAST, there was never a separate category there to purchase. SCA as a standalone product has been dead for years. The invoice simply never said so.
 
 The fix runs back through every other chapter. Trust the thing that did the install. Make the SBOM an input. Aggregate good data so the findings are real. Put the gate at install and the detection at publish. The package manager was the source of truth the whole time.

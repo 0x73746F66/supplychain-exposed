@@ -1,8 +1,8 @@
 ---
 title: "Set the Data Free"
-weight: 7
+weight: 8
 slug: "set-the-data-free"
-kicker: "Chapter Six"
+kicker: "Chapter Seven"
 subtitle: "Intelligence that cannot move at machine speed is a museum piece."
 ---
 
