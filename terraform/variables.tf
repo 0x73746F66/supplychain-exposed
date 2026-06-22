@@ -1,6 +1,23 @@
+variable "api_token" {
+  description = <<-EOT
+    Cloudflare API token, scoped to Zone > DNS > Edit and Zone > Zone > Read for
+    supplychain.exposed. Set it in the gitignored terraform.tfvars (never committed).
+    Leave null to fall back to the CLOUDFLARE_API_TOKEN environment variable instead.
+  EOT
+  type        = string
+  sensitive   = true
+  default     = null
+}
+
 variable "zone_id" {
   description = "Cloudflare zone ID for supplychain.exposed. Find it on the domain's Overview page in the dashboard (right-hand 'API' panel)."
   type        = string
+}
+
+variable "account_id" {
+  description = "Cloudflare account ID. The zone-scoped DNS records here need only zone_id, so this is not consumed today; it is stored for completeness and any future account-scoped resources."
+  type        = string
+  default     = null
 }
 
 variable "domain" {

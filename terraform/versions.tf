@@ -10,7 +10,10 @@ terraform {
   }
 }
 
-# The API token is read from the CLOUDFLARE_API_TOKEN environment variable.
+# The API token comes from var.api_token (set in the gitignored terraform.tfvars).
+# If that is null it falls back to the CLOUDFLARE_API_TOKEN environment variable.
 # Scope it to: Zone > DNS > Edit and Zone > Zone > Read, limited to the
-# supplychain.exposed zone. Do not hard-code it here.
-provider "cloudflare" {}
+# supplychain.exposed zone. Never commit it — terraform.tfvars is gitignored.
+provider "cloudflare" {
+  api_token = var.api_token
+}

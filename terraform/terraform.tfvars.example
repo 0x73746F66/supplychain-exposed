@@ -1,7 +1,14 @@
 # Copy to terraform.tfvars and fill in. terraform.tfvars is gitignored.
 
+# API token: profile > API Tokens, scoped Zone > DNS:Edit and Zone:Read for this
+# zone. Omit this line to use the CLOUDFLARE_API_TOKEN environment variable instead.
+api_token = "REPLACE_WITH_API_TOKEN"
+
 # Zone ID from the Cloudflare dashboard: supplychain.exposed > Overview > API panel.
 zone_id = "REPLACE_WITH_ZONE_ID"
+
+# Account ID: dashboard > account home, or any zone's Overview > API panel.
+account_id = "REPLACE_WITH_ACCOUNT_ID"
 
 # Defaults below are already correct for this project; override only if needed.
 # domain              = "supplychain.exposed"
