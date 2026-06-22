@@ -1,4 +1,4 @@
-# The Vulnerability Manifesto
+# supplychain.exposed
 
 > We defend software in the wrong place, too late, with data we can't trust. The fix is at the source.
 
